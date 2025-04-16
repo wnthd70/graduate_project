@@ -19,15 +19,6 @@ data_path = r"C:\Users\wnthd\Downloads\emotion_set"
 # data_path 경로에서 '5차년도.csv' 파일 읽기
 df = pd.read_csv(os.path.join(data_path, "5차년도_2차.csv"), encoding='cp949')
 
-# df에서 상황 인덱스를 기준으로 폴더에 접근하기, 예를들어 상황이 anger라면 anger 폴더에 접근
-
-
-#1. df에서 상황 인덱스를 읽어오기
-#2. 상황 인덱스와 같은 이름의 폴더에 접근
-#3. 해당 폴더의 .wav 파일을 extract_features 함수에 넣기
-#4. 결과를 CSV 파일로 저장하기
-#5. CSV 파일의 첫번째 열은 label로 설정하기
-#6. label은 상황 인덱스와 같은 이름으로 설정하기
 count = 0
 row_list = []
 for index, row in df.iterrows():
