@@ -14,6 +14,14 @@ def extract_features(audio_path):
     # print(smile.feature_names)
     return features
 
+def save_to_csv(row_list):
+    # 기존 CSV의 열 순서를 가져옴
+    columns = pd.read_csv("dataset.csv", nrows=1).columns.tolist()
+    
+    new_df = pd.DataFrame(row_list, columns=columns)
+    # print(f"new_df확인 : {new_df}")
+    new_df.to_csv("dataset.csv", mode='a', index=False, header=False)
+
 data_path = r"C:\Users\wnthd\Downloads\emotion_set"
 
 # data_path 경로에서 '5차년도.csv' 파일 읽기
@@ -46,13 +54,5 @@ for index, row in df.iterrows():
         print(f"File not found: {audio_path}")
 
 print("======처리 완료======")
-
-def save_to_csv(row_list):
-    # 기존 CSV의 열 순서를 가져옴
-    columns = pd.read_csv("dataset.csv", nrows=1).columns.tolist()
-    
-    new_df = pd.DataFrame(row_list, columns=columns)
-    # print(f"new_df확인 : {new_df}")
-    new_df.to_csv("dataset.csv", mode='a', index=False, header=False)
 
 save_to_csv(row_list)
