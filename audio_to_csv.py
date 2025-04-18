@@ -33,7 +33,7 @@ for index, row in df.iterrows():
     wav_id = str(row['wav_id'])
     situation = str(row['상황'])
 
-    # data_path/situation 폴더에 접근
+    # 폴더 및 파일에 접근
     folder_path = os.path.join(data_path, "5차년도_2차")
     audio_path = os.path.join(folder_path, wav_id + ".wav")
     
