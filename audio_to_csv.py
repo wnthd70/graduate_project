@@ -1,3 +1,4 @@
+# https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=115&dataSetSn=263&topMenu=100
 # 음성 데이터를 OpenSMILE을 사용하여 CSV 파일로 변환
 import opensmile
 import numpy as np
